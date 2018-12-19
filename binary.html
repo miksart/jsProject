@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>binary</title>
+    <style>
+        #btn {
+            width: 500px;
+            margin: 100px auto;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        button {
+            width: 90px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 5px;
+            border: 1px solid black;
+            background: #eee;
+            color: rgb(0, 0, 0);
+            transition: 500ms;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        button:hover {
+            border: none;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+<div>
+
+    <div id="btn">
+        <center>
+            <button onclick="fun()">دودویی جستجو</button>
+        </center>
+    </div>
+
+    <p id="Method1"></p>
+    <p id="Method2"></p>
+    <p id="Method3"></p>
+    <p id="Method4"></p>
+
+</div>
+
+<body>
+    <script type="text/javascript">
+
+        var steps = 0;
+        var list = [2, 9, 4, 1, 6, 7, 3, 5, 8]
+        document.getElementById("Method1").innerHTML = list;
+        function binarySearch(list, value) {
+            var start = 0
+            var stop = list.length - 1
+            var middle = Math.floor((start + stop) / 2)
+
+            while (list[middle] !== value && start < stop) {
+                if (value < list[middle]) {
+                    stop = middle - 1
+                    steps++;
+                } else {
+                    start = middle + 1
+                    steps++;
+                }
+                middle = Math.floor((start + stop) / 2)
+            }
+
+            return (list[middle] !== value) ? -1 : middle
+        }
+
+        function fun() {
+            list.sort();
+            document.getElementById("Method2").innerHTML = list;
+            var input = parseInt(prompt("عدد مورد نظر را وارد کنید"));
+            document.getElementById("Method3").innerHTML = "element " + binarySearch(list, input);
+            document.getElementById("Method4").innerHTML = "steps " + steps;
+            steps=0;
+        }
+        // console.log() 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix2d+</title>
+    <style>
+        #btn {
+            width: 500px;
+            margin: 100px auto;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        button {
+            width: 90px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 5px;
+            border: 1px solid black;
+            background: #eee;
+            color: rgb(0, 0, 0);
+            transition: 500ms;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        button:hover {
+            border: none;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+<div>
+
+    <div id="btn">
+        <center>
+            <button onclick="fun()">جستجو خطی</button>
+        </center>
+    </div>
+
+    <p id="Method1"></p>
+    <p id="Method2"></p>
+    <p id="Method3"></p>
+
+</div>
+
+<body>
+    <script type="text/javascript">
+
+        function multiplyMatrix(m1, m2) {
+            var result = [];
+            for (var j = 0; j < m2.length; j++) {
+                result[j] = [];
+                for (var k = 0; k < m1[0].length; k++) {
+                    var sum = 0;
+                    for (var i = 0; i < m1.length; i++) {
+                        sum += m1[i][k] * m2[j][i];
+                    } result[j].push(sum);
+                }
+            }
+            return result;
+        }
+
+
+        var list = [[2, 4],
+        [3, 4]
+        ];
+        var list2 = [[2, 4],
+        [3, 4]
+        ];
+        console.log(multiplyMatrix(list, list2)[0]);
+
+        // console.log() 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>linear</title>
+    <style>
+        #btn {
+            width: 500px;
+            margin: 100px auto;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        button {
+            width: 90px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 5px;
+            border: 1px solid black;
+            background: #eee;
+            color: rgb(0, 0, 0);
+            transition: 500ms;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        button:hover {
+            border: none;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+<div>
+
+    <div id="btn">
+        <center>
+            <button onclick="fun()">جستجو خطی</button>
+        </center>
+    </div>
+
+    <p id="Method1"></p>
+    <p id="Method2"></p>
+    <p id="Method3"></p>
+
+</div>
+
+<body>
+    <script type="text/javascript">
+
+        var steps = 0;
+        var list = [2, 9, 4, 1, 6, 7, 3, 5, 8]
+        document.getElementById("Method1").innerHTML = list;
+        function linearSearch(list, value) {
+            for (var i = 0; i < list.length; i++) {
+                if (list[i] == value) {
+                    return i;
+                }
+                steps++;
+            } return null;
+        }
+
+        function fun() {
+            var input = parseInt(prompt("عدد مورد نظر را وارد کنید"));
+            document.getElementById("Method2").innerHTML = "element " + linearSearch(list, input);
+            document.getElementById("Method3").innerHTML = "steps " + steps;
+            steps=0;
+        }
+        // console.log() 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>arrys</title>
+    <style>
+        #btn{
+            width: 500px;
+            margin: 100px auto;
+            
+        }
+        p{
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        
+        }
+        button{
+            width: 90px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 5px;
+            border: 1px solid black;
+            background: #eee;
+            color: rgb(0, 0, 0);
+            transition: 500ms;
+            
+        }
+        button:hover{
+            border: none;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            transform: scale(1.1)
+            
+        }
+    </style>
+</head>
+<div>
+    
+<div id="btn">
+        <button onclick="fun1()">متد 1</button>
+        <button onclick="fun2()">متد 2</button>
+        <button onclick="fun3()">متد 3</button>
+        <button onclick="fun4()">متد 4</button>
+        <button onclick="fun5()">متد 5</button>
+</div>
+
+<p id="Method1"></p>
+<p id="Method2"></p>
+<p id="Method3"></p>
+<p id="Method4"></p>
+<p id="Method5"></p>
+</div>
+
+<body>
+    <script type="text/javascript">
+        function fun1() {
+            var Method11 = new Array(40, 100, 1, 5, 25, 10);
+            document.getElementById("Method1").innerHTML = Method11;
+
+        }
+        function fun2() {
+            var Method22 = new Array(4);
+            Method22[0] = 22;
+            Method22[1] = null;
+            Method22[2] = true;
+            Method22[3] = "string";
+            document.getElementById("Method2").innerHTML = Method22;
+
+        }
+        function fun3() {
+            var Method33 = new Array(4);
+            Method33[0] = prompt("element 1", "20");
+            Method33[1] = prompt("element 2", "20");
+            Method33[2] = prompt("element 3", "20");
+            Method33[3] = prompt("element 4", "20");
+            document.getElementById("Method3").innerHTML = Method33;
+            
+        }
+        function fun4() {
+            var Method44 = new Array(4);
+            for (let i = 0; i < Method44.length; i++) {
+                Method44[i] = i + 5;
+                
+            }
+            document.getElementById("Method4").innerHTML = Method44;
+            
+        }
+        function fun5() {
+            
+            var Method55 = new Array(4);
+            Method55[0] = Math.floor((Math.random() * 100) + 1);
+            Method55[1] = Math.floor((Math.random() * 100) + 1);
+            Method55[2] = Math.floor((Math.random() * 100) + 1);
+            Method55[3] = Math.floor((Math.random() * 100) + 1);
+            document.getElementById("Method5").innerHTML = Method55;
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
