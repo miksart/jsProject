@@ -44,7 +44,7 @@
 
     <div id="btn">
         <center>
-            <button onclick="fun()">مرتب سازی انتخابی</button>
+            <button onclick="fun()">توابع بازگشتی</button>
         </center>
     </div>
 
@@ -62,16 +62,40 @@
             if (x === 0) return 1;
             return x * factorial(x - 1);
         }
-        factorial(3);
+
+
+
+        function countdown(value) {
+            if (value > 0) {
+                console.log(value);
+                return countdown(value - 1);
+            } else {
+                return value;
+            }
+        };
+
+
+        var fibonacci_series = function (n) {
+            if (n === 1) {
+                return [0, 1];
+            }
+            else {
+                var s = fibonacci_series(n - 1);
+                s.push(s[s.length - 1] + s[s.length - 2]);
+                return s;
+            }
+        };
+
 
 
 
 
         // console.log(bubble_Sort([3, 0, 2, 5, -1, 4, 1]));
         function fun() {
-            var factorial1=parseInt(prompt("factorial"))
-            document.getElementById("Method1").innerHTML = "factorial("+factorial1+");" + factorial(factorial1);;
-            document.getElementById("Method2").innerHTML = "sored " + selectionSort([3, 0, 2, 5, -1, 4, 1]);
+            var input = parseInt(prompt("input"))
+            document.getElementById("Method1").innerHTML = "factorial(" + input + ");" + factorial(input);;
+            document.getElementById("Method2").innerHTML = "countdown(" + input + ");" + countdown(input);;
+            document.getElementById("Method3").innerHTML = "fibonacci_series(" + input + ");" + fibonacci_series(input);;
         }
 
 
