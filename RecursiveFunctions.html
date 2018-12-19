@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selection sort</title>
+    <style>
+        #btn {
+            width: 500px;
+            margin: 100px auto;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        button {
+            width: 90px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 5px;
+            border: 1px solid black;
+            background: #eee;
+            color: rgb(0, 0, 0);
+            transition: 500ms;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        button:hover {
+            border: none;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+<div>
+
+    <div id="btn">
+        <center>
+            <button onclick="fun()">مرتب سازی انتخابی</button>
+        </center>
+    </div>
+
+    <p id="Method1"></p>
+    <p id="Method2"></p>
+    <p id="Method3"></p>
+
+</div>
+
+<body>
+    <script type="text/javascript">
+
+        function factorial(x) {
+            if (x < 0) return;
+            if (x === 0) return 1;
+            return x * factorial(x - 1);
+        }
+        factorial(3);
+
+
+
+
+        // console.log(bubble_Sort([3, 0, 2, 5, -1, 4, 1]));
+        function fun() {
+            var factorial1=parseInt(prompt("factorial"))
+            document.getElementById("Method1").innerHTML = "factorial("+factorial1+");" + factorial(factorial1);;
+            document.getElementById("Method2").innerHTML = "sored " + selectionSort([3, 0, 2, 5, -1, 4, 1]);
+        }
+
+
+    </script>
+</body>
+
+</html>

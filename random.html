@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>random</title>
+    <style>
+        #btn {
+            width: 500px;
+            margin: 100px auto;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        button {
+            width: 90px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 5px;
+            border: 1px solid black;
+            background: #eee;
+            color: rgb(0, 0, 0);
+            transition: 500ms;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        button:hover {
+            border: none;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+<div>
+
+    <div id="btn">
+        <center>
+            <button onclick="fun()">رندوم</button>
+        </center>
+    </div>
+
+    <p id="Method1"></p>
+    <p id="Method2"></p>
+    <p id="Method3"></p>
+
+</div>
+
+<body>
+    <script type="text/javascript">
+
+        function fun() {
+            var input = parseInt(prompt("عدد مورد نظر را وارد کنید"));
+            document.getElementById("Method1").innerHTML = "From 0 to 1 => " + Math.random();
+            document.getElementById("Method2").innerHTML = "From 0 to "+input+"(Along with decimals) => " +  +Math.random()*input;
+            document.getElementById("Method3").innerHTML = "From 0 to "+input+"=> " + Math.floor((Math.random() * input));;
+            document.getElementById("Method3").innerHTML = "From 1 to "+input+"=> " + Math.floor((Math.random() * input)+1);;
+        }
+    </script>
+</body>
+
+</html>
